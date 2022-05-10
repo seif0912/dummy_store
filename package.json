@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://seif0912.github.io/react-app",
+  "homepage": "https://seif0912.github.io/dummy_store",
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
