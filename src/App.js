@@ -1,9 +1,11 @@
-import Header from './components/Header'
+import Hero from './components/Hero'
 import React from 'react'
 import ReactDOM from 'react-dom'
+
 function App() {
   return (
-    <Header />
+    
+    <Hero />
   );
 }
 

@@ -18,6 +18,7 @@ html {
 
 body {
   font-family: 'Helvetica', sans-serif;
+  margin: 0;
 }
 
 a {
@@ -121,7 +122,7 @@ nav .logo {
   font-weight: bold;
   text-transform: uppercase;
   font-size: 30px;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 nav .links {
@@ -130,7 +131,7 @@ nav .links {
 }
 
 nav .links li a {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(0, 0, 0, 0.75);
   text-transform: uppercase;
   position: relative;
   padding: 20px 0;
@@ -138,7 +139,7 @@ nav .links li a {
 }
 
 nav .links li a:hover{
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 nav .links li a::before {
@@ -147,7 +148,7 @@ nav .links li a::before {
   height: 3px;
   width: 0;
   transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(0, 0, 0, 0.95);
   left: 50%;
   bottom: 0;
   -webkit-transition: .2s;
@@ -156,11 +157,11 @@ nav .links li a::before {
 
 nav .links li a:hover::before {
   width: 125%;
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 nav .ca-se a{
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 nav .ca-se .i {
@@ -174,7 +175,7 @@ nav .ca-se i:last-child {
 }
 
 body{
-  background-color: #555;
+  background-color: rgb(255, 255, 255);
 }
 
 .burger{
@@ -188,7 +189,7 @@ body{
 span{
   height: 3px;
   width: 25px;
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   display: block;
   transition: inherit;
 }
@@ -218,6 +219,7 @@ span:not(:last-child){
     display: flex;
     flex-direction: column;
     align-items: center;
+    backdrop-filter: blur(5px);
     width: 250px;
     position: absolute;
     padding: 15px;
@@ -235,7 +237,7 @@ nav.active .links::before{
   width: 0;
   height: 0;
   border: 15px solid;
-  border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.85) transparent;
   top: -30px;
   right: 25px;
 }
@@ -243,8 +245,14 @@ nav.active .links li{
   width: fit-content;
   
 }
+
+nav.active .links li a{
+  color: white;
+}
+
 nav.active .links li a::before{
   bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 nav.active .ca-se{
   position: absolute;
@@ -260,5 +268,126 @@ nav.active .ca-se{
   z-index: 99;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
+
+nav.active .ca-se a{
+  color: white;
 }
 
+}
+
+.hero{
+  height: 100vh;
+  display: flex;
+}
+
+.landing{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing .convert{
+  width: 50%;
+}
+
+.landing .convert h1{
+  font-size: 56px;
+  text-transform: uppercase;
+  color:  #2631ce;
+  margin-bottom: 15px;
+}
+
+@media (max-width:500px){
+  .landing .convert h1{
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 10px;
+  }
+  .landing .convert p{
+      text-align: center;
+      font-size: 14px;
+  }
+}
+.landing .convert p{
+  color: #777;
+  margin: 0;
+}
+
+.landing .convert p.clicked{
+  color: #acacac;
+}
+
+.landing .convert .btns{
+  display: flex;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.landing .convert .btns a{
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  padding: 15px;
+  text-transform: capitalize;
+  border-radius: 5em;
+  color: rgb(255, 255, 255);
+  background-color:  #2631ce;
+  transition: .2s;
+  position: relative;
+  width: 100%;
+}
+.landing .convert .btns a:hover{
+  background-color: #2631cedb;
+}
+
+.landing .image{
+  width: 35%;
+  height: fit-content;
+  padding: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.landing .image img{
+  width: 100%;
+  margin: 0;
+  transition: .2s;
+}
+
+.landing .image img.clicked{
+  filter: opacity(.8);
+  transition: .2s;
+}
+.landing .image::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  background-color: rgba(38, 33, 33, 0.273);
+  bottom: -15px;
+  left: 0;
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+
+@media (max-width:500px){
+  .hero .landing{
+      flex-direction: column-reverse;
+      justify-content: center;
+      gap: 10%;
+  }
+  .hero .landing .convert{
+      width: unset;
+  }
+  .landing .image{
+      width: 60%;
+  }
+  .hero .landing .convert .btns a:first-child,
+  .hero .landing .convert .btns a:last-child{
+      font-size: 18px;
+      padding: 10px;
+  }
+}
