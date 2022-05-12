@@ -10,8 +10,24 @@ import { faCoffee, faShop, faCartShopping, faMagnifyingGlass } from '@fortawesom
 
 
 function Header() {
+
+
+    const [isActive, setActive] = React.useState(false)
+
+    function flipActive(){
+        setActive( prevState => !prevState )
+    }
+
+
+    window.addEventListener("resize", function(){
+        const winWidth = window.innerWidth
+        if (winWidth >= 790 && isActive){
+            setActive( false )
+        }
+    })
+
     return (
-        <nav className="ff">
+        <nav className={isActive ? 'active' : ''}>
             <div className="container">
                 <h1 className="logo">DUMMY STORE</h1>
                 <ul className="links">
@@ -28,7 +44,7 @@ function Header() {
                         <FontAwesomeIcon icon={faCartShopping} className="i"/>
                     </a>
                 </ul>
-                <div className="burger">
+                <div onClick={flipActive} className={isActive ? 'burger active' : 'burger'} >
                     <span></span>
                     <span></span>
                     <span></span>
