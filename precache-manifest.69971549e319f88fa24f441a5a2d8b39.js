@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "1da7b2fcf2d287ddd4ed",
-    "url": "/dummy_store/static/css/main.cb28da10.chunk.css"
+    "revision": "94fa2fe89cfa48a20ffb",
+    "url": "/dummy_store/static/css/main.e876fce6.chunk.css"
   },
   {
-    "revision": "1da7b2fcf2d287ddd4ed",
-    "url": "/dummy_store/static/js/main.1da7b2fc.chunk.js"
+    "revision": "94fa2fe89cfa48a20ffb",
+    "url": "/dummy_store/static/js/main.94fa2fe8.chunk.js"
   },
   {
     "revision": "7d8a5b69bced8be18895",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/dummy_store/static/media/Cat.c45909a2.png"
   },
   {
-    "revision": "422e4e79d0aac068301590cafd9d4e1a",
+    "revision": "0f9fc1254b1dcabe4eec8dd83d1d0941",
     "url": "/dummy_store/index.html"
   }
 ];
