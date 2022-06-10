@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faShop, faCartShopping, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-
+import {Link, link} from 'react-router-dom'
 
 
 
@@ -29,10 +29,12 @@ function Header() {
     return (
         <nav className={isActive ? 'active' : ''}>
             <div className="container">
-                <h1 className="logo">DUMMY STORE</h1>
+                <Link to='/'>
+                    <h1 className="logo">DUMMY STORE</h1>
+                </Link>
                 <ul className="links">
-                    <li><a href="#">home</a></li>
-                    <li><a href="#">shop</a></li>
+                    <li><Link to="/">home</Link></li>
+                    <li><Link to="shop">shop</Link></li>
                     <li><a href="#">about</a></li>
                     <li><a href="#">support</a></li>
                 </ul>

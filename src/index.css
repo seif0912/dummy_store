@@ -299,7 +299,7 @@ nav.active .ca-se a{
 
 }
 
-.hero{
+.hero, .shop{
   height: 100vh;
   display: flex;
 }
